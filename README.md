@@ -40,6 +40,11 @@ editable:
 git clone https://github.com/RGH912/varlib.git
 cd varlib
 
+# crear y activar un entorno virtual
+python -m venv venv
+venv\Scripts\activate          # Windows
+# source venv/bin/activate     # Linux / macOS
+
 # instalar la librería en modo editable
 pip install -e .
 
