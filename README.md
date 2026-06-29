@@ -10,27 +10,35 @@ gráficos y reportes HTML autónomos.
 ## Características
 
 - **Modelos de VaR/ES**: histórico, paramétrico (Normal, t de Student, skew-t),
-  Monte Carlo y sus variantes con volatilidad condicional **GARCH(p, q)**.
-- **Estimación por máxima verosimilitud** de los parámetros (vía `arch`).
+  Monte Carlo (Normal) y sus variantes con volatilidad condicional GARCH:
+  orden (p, q) general en el paramétrico y (1, 1) en el de Monte Carlo.
+  Parámetros estimados por máxima verosimilitud (vía `arch`).
+- **VaR dinámico** sobre ventana deslizante o expansiva, sin *look-ahead bias*.
 - **Backtesting**: tests de Kupiec (cobertura incondicional) y Christoffersen
-  (independencia y cobertura condicional), con ventana deslizante o expansiva.
-- **VaR dinámico** sobre ventana móvil o expansiva.
+  (independencia y cobertura condicional).
 - **Reporting**: resúmenes por consola, gráficos (`matplotlib`) y reportes HTML
-  auto-contenidos (figuras embebidas en base64).
+  autónomos (un único archivo, sin dependencias externas).
 
 ## Requisitos
 
 - Python ≥ 3.10
-- Dependencias (se instalan solas): `numpy`, `pandas`, `scipy`, `matplotlib`,
+- Dependencias: `numpy`, `pandas`, `scipy`, `matplotlib`,
   `arch`, `yfinance`.
 
 ## Instalación
 
 ```bash
-# (opcional) crear y activar un entorno virtual
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux / macOS
+pip install git+https://github.com/RGH912/varlib.git
+```
+
+## Desarrollo
+
+Para colaborar o ejecutar los tests, clona el repositorio e instala en modo
+editable:
+
+```bash
+git clone https://github.com/RGH912/varlib.git
+cd varlib
 
 # instalar la librería en modo editable
 pip install -e .
@@ -88,13 +96,12 @@ reporte.export_html(
 ```
 
 > Convención de `arch`: en GARCH(p, q), **p** es el orden ARCH (α) y **q** el
-> orden GARCH (β), a la inversa de Bollerslev (1986). En GARCH(1,1) la
-> distinción es irrelevante.
+> orden GARCH (β), a la inversa de Bollerslev (1986).
 
 ## Estructura del proyecto
 
 ```
-libreria_var_garch/
+varlib/                     # Raíz del repositorio
 ├── varlib/                 # Paquete principal
 │   ├── data/               # DataLoader (descarga y preprocesamiento)
 │   ├── models/             # Modelos VaR (histórico, paramétrico, MC, GARCH)
@@ -107,6 +114,9 @@ libreria_var_garch/
 ```
 
 ## Tests
+
+Requiere haber instalado las dependencias de desarrollo (`pip install -e ".[dev]"`)
+y tener el entorno virtual activado:
 
 ```bash
 pytest                  # toda la suite
