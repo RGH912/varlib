@@ -125,7 +125,7 @@ y tener el entorno virtual activado:
 
 ```bash
 pytest                  # toda la suite
-pytest -m "not slow"    # omite las pruebas lentas (GARCH por MLE, Monte Carlo)
+pytest -m "not slow"    # omite las pruebas lentas (GARCH y Monte Carlo)
 pytest --cov            # con informe de cobertura
 ```
 
