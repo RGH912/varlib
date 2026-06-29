@@ -132,3 +132,4 @@ pytest --cov            # con informe de cobertura
 ## Autor
 
 Ricardo García — Proyecto de Fin de Grado.
+Contacto: [ricardoghufv@gmail.com](mailto:ricardoghufv@gmail.com)
