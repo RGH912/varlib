@@ -5,7 +5,7 @@ con backtesting estadístico, desarrollada como Proyecto de Fin de Grado.
 
 Implementa varios modelos de VaR con una API orientada a objetos, validación
 mediante contrastes (Kupiec, Christoffersen) y exportación de resultados a
-consola, gráficos y reportes HTML autónomos.
+gráficos y reportes HTML autónomos.
 
 ## Características
 
