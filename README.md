@@ -19,6 +19,9 @@ gráficos y reportes HTML autónomos.
 - **Reporting**: resúmenes por consola, gráficos (`matplotlib`) y reportes HTML
   autónomos (un único archivo, sin dependencias externas).
 
+> Convención de `arch`: en GARCH(p, q), **p** es el orden ARCH (α) y **q** el
+> orden GARCH (β), a la inversa de Bollerslev (1986).
+
 ## Requisitos
 
 - Python ≥ 3.10
@@ -99,9 +102,6 @@ reporte.export_html(
     filepath="reporte_var_sp500.html",
 )
 ```
-
-> Convención de `arch`: en GARCH(p, q), **p** es el orden ARCH (α) y **q** el
-> orden GARCH (β), a la inversa de Bollerslev (1986).
 
 ## Estructura del proyecto
 
