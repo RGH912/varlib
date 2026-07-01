@@ -114,7 +114,6 @@ varlib/                     # Raíz del repositorio
 │   └── reporting/          # Consola, gráficos y reportes HTML
 ├── tests/                  # Suite de tests (pytest), un archivo por módulo
 ├── examples/               # Scripts de demostración y estudio empírico
-├── main.py                 # Demo principal
 └── pyproject.toml          # Configuración del proyecto y dependencias
 ```
 
