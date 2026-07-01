@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "varlib"
+version = "0.1.0"
+description = "Librería de estimación del Value at Risk (VaR) con backtesting estadístico"
+readme = "README.md"
+requires-python = ">=3.10"   # desarrollado y validado con Python 3.13.3
+authors = [{ name = "Ricardo García Herranz" }]
+dependencies = [
+    "numpy==2.4.3",
+    "pandas==3.0.1",
+    "scipy==1.17.1",
+    "matplotlib==3.10.8",
+    "arch==8.0.0",
+    "yfinance==1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.2",
+    "pytest-cov==7.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["varlib*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["varlib"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "@abstractmethod",
+]
